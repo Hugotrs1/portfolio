@@ -3,47 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Hugo</title>
+  <title>Portfolio - Hugo Troussel</title>
+  <meta name="description" content="Portfolio de Hugo Troussel - Développeur junior en alternance. Découvrez mes projets, expériences et compétences.">
+  <meta property="og:title" content="Portfolio - Hugo Troussel">
+  <meta property="og:description" content="Découvrez mes projets, expériences et compétences en développement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hugotrs1.github.io/portfolio">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg" href="assets/logo_dev.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo_dev.svg">
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <h1 class="logo">Hugo</h1>
+      <h1 class="logo">Portfolio</h1>
       <ul class="nav-links">
         <li><a href="#about">À propos</a></li>
         <li><a href="#skills">Compétences</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/Cv Hugo Troussel.pdf" target="_blank">📄 CV</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>À propos de moi</h2>
-    <p>Étudiant en informatique, passionné par le développement web, la programmation et les bases de données. Je réalise des projets concrets pour mettre en pratique mes compétences et progresser continuellement.</p>
-  </section>
+  <section id="about" class="section about-section">
+    <div class="about-card">
+      <h2>Profil</h2>
+      <p>
+        <strong>Développeur Junior | Cursus en 3 ans</strong><br>
+        Rythme : 1 sem./3 sem. (en alternance)<br>
+        Vous cherchez à optimiser votre écosystème logiciel ? <br>
+        Je suis prêt à concevoir des solutions sur mesure pour renforcer votre performance 
+        et accompagner votre croissance.
+      </p>
+    </div>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Compétences</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><img src="assets/logo_html.png" alt="HTML"><p>HTML</p></div>
-      <div class="skill-card"><img src="assets/logo_css.png" alt="CSS"><p>CSS</p></div>
-      <div class="skill-card"><img src="assets/logo_js.png" alt="JS"><p>Javascript</p></div>
-      <div class="skill-card"><img src="assets/logo_php.png" alt="PHP"><p>PHP</p></div>
-      <div class="skill-card"><img src="assets/logo_sql.png" alt="SQL"><p>SQL</p></div>
-      <div class="skill-card"><img src="assets/logo_flutter.png" alt="Flutter"><p>Flutter</p></div>
-      <div class="skill-card"><img src="assets/logo_github.jpg" alt="Git"><p>Git</p></div>
-      <div class="skill-card"><img src="assets/logo_java.png" alt="Java"><p>Java</p></div>
+    <div class="experience-card">
+      <h2>Expériences Professionnelles</h2>
+      <div class="exp-item">
+        <h3>Agelid - Gournay-en-Bray</h3>
+        <p><strong>Stage : Mars - Juin 2025</strong></p>
+        <p>Ajout de fonctionnalités à une application dans le but de sa commercialisation.</p>
+        <p><em>Langages utilisés : Flutter, Dart, Java</em></p>
+      </div>
+    </div>
+
+    <div class="education-card">
+      <h2>Formations & Certifications</h2>
+      <ul>
+        <li><strong>Bachelor : Concepteur développeur d’applications</strong> — CESI Rouen (en cours)</li>
+        <li><strong>Baccalauréat Général</strong> (Spécialités : Mathématiques, NSI) — Lycée Jacques Prévert, Pont-Audemer (2024)</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Projects -->
+  <section id="skills" class="section">
+    <h2>Compétences</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="assets/logo_html.png" alt="Logo HTML"><p>HTML</p></div>
+      <div class="skill-card"><img src="assets/logo_css.png" alt="Logo CSS"><p>CSS</p></div>
+      <div class="skill-card"><img src="assets/logo_js.png" alt="Logo Javascript"><p>JavaScript</p></div>
+      <div class="skill-card"><img src="assets/logo_php.png" alt="Logo PHP"><p>PHP</p></div>
+      <div class="skill-card"><img src="assets/logo_sql.png" alt="Logo SQL"><p>SQL</p></div>
+      <div class="skill-card"><img src="assets/logo_flutter.png" alt="Logo Flutter"><p>Flutter</p></div>
+      <div class="skill-card"><img src="assets/logo_github.jpg" alt="Logo GitHub"><p>Github</p></div>
+      <div class="skill-card"><img src="assets/logo_java.png" alt="Logo Java"><p>Java</p></div>
+    </div>
+  </section>
+
   <section id="projects" class="section">
     <h2>Mes projets</h2>
     <div class="projects-grid">
@@ -65,29 +93,28 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="section contact-section">
     <div class="contact-card">
       <h2>Contactez-moi</h2>
       <form id="contact-form">
         <div class="form-group">
             <label for="name">Nom</label>
-            <input type="text" name="user_name" placeholder="Votre nom" required>
+            <input id="name" type="text" name="user_name" placeholder="Votre nom" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="user_email" placeholder="Votre email" required>
+            <input id="email" type="email" name="user_email" placeholder="Votre email" required>
         </div>
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea name="message" placeholder="Votre message" required></textarea>
+            <textarea id="message" name="message" placeholder="Votre message" required></textarea>
         </div>
         <button type="submit">Envoyer</button>
-        </form>
+      </form>
       <div class="contact-social">
-        <a href="mailto:trousselhugo@gmail.com"><img src="assets/logo_mail.png" alt="Email"></a>
-        <a href="https://github.com/Hugotrs1" target="_blank"><img src="assets/logo_github.jpg" alt="GitHub"></a>
-        <a href="https://www.linkedin.com/in/hugotroussel/" target="_blank"><img src="assets/logo_linkedin.png" alt="LinkedIn"></a>
+        <a href="mailto:trousselhugo@gmail.com"><img src="assets/logo_mail.png" alt="Icône Email"></a>
+        <a href="https://github.com/Hugotrs1" target="_blank"><img src="assets/logo_github.jpg" alt="Icône GitHub"></a>
+        <a href="https://www.linkedin.com/in/hugotroussel/" target="_blank"><img src="assets/logo_linkedin.png" alt="Icône LinkedIn"></a>
       </div>
     </div>
   </section>
@@ -97,11 +124,11 @@
   </footer>
 
   <script src="script.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
     (function(){
-        emailjs.init("wwkDH3IoSRVpq6E6-"); // Remplace par ta public key EmailJS
+        emailjs.init("wwkDH3IoSRVpq6E6-");
     })();
-    </script>
+  </script>
 </body>
 </html>
