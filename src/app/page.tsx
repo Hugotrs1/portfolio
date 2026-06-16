@@ -15,13 +15,6 @@ import { projects } from "@/data/projects";
 import { person } from "@/data/profile";
 import { skills } from "@/data/skills";
 
-const heroBadges = [
-  "Alternance @ Agelid",
-  "Flutter / Dart",
-  "Java / JSP",
-  "Cartographie / Géoloc",
-];
-
 const heroHighlights = [
   {
     emoji: "🎨",
@@ -65,17 +58,6 @@ export default function Home() {
 
               <div className="space-y-3 text-base leading-relaxed text-[color:var(--foreground)]/70">
                 <p>{person.introduction}</p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {heroBadges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="rounded-full border border-[color:var(--border)] bg-[color:var(--card)] px-3 py-1 text-xs font-semibold text-[color:var(--foreground)]/80"
-                  >
-                    {badge}
-                  </span>
-                ))}
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2">

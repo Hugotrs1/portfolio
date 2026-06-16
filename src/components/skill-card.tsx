@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Skill } from "@/types";
 import { Reveal } from "@/components/reveal";
+import { asset } from "@/lib/base-path";
 
 type SkillCardProps = { skill: Skill };
 
@@ -10,7 +11,7 @@ export function SkillCard({ skill }: SkillCardProps) {
       <div className="card-surface flex h-full items-center gap-4 px-4 py-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[color:var(--border)] bg-[color:var(--card-muted)]">
           <Image
-            src={skill.icon}
+            src={asset(skill.icon)}
             alt={skill.alt}
             width={40}
             height={40}
