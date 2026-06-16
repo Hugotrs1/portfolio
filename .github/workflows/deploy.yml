@@ -1,0 +1,57 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (export statique)
+        run: npm run build
+        env:
+          # Clés EmailJS publiques (exposées côté client de toute façon).
+          # Tu peux les déplacer en "Repository secrets" si tu préfères.
+          NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: wwkDH3IoSRVpq6E6-
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID: service_portfolio
+          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: template_portfolio
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
